@@ -17,7 +17,7 @@ Before using this app, you have to go to [SendHub](https://www.sendhub.com) to s
 bundle 
 rails s
 ```
-go to [http://localhost:3000 in your browser](http://localhost:3000 in your browser)
+go to [http://localhost:3000](http://localhost:3000) in your browser.
 
 [Online Link](http://sendapp.joeyhu.info/)
 
