@@ -19,7 +19,7 @@ rails s
 ```
 go to http://localhost:3000 in your browser
 
-[Online Link](http://sendhubapp-joeyhu.herokuapp.com/)
+[Online Link](http://sendhubapp-joeyhu.herokuapp.com/)(There is some issues with the live one on heroku, I will fix it tomorrow morning.)
 
 
 
