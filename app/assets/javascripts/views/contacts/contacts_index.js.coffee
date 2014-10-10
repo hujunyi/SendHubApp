@@ -10,6 +10,12 @@ class SendHub.Views.ContactsIndex extends Backbone.View
     'keyup': 'resetBtns'
 
   initialize: ->
+    @collection.fetch({
+      success: (response)=>
+        @alertMsg 'Your contacts are loaded successfully!','alert-success'
+      error: (error)=>
+        @alertMsg 'Fetch contacts failure.','alert-danger'
+    })
     @collection.on('reset',@render)
     @collection.on('change',@render)
     @collection.on('add',@render)

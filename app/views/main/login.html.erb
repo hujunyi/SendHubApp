@@ -1,0 +1,16 @@
+<h1 class="text-center">SendHub</h1>
+<div class="container">
+  <%= form_tag home_path do %>
+  <form role="form">
+    <div class="form-group">
+      <%= label_tag "Username" %>
+      <%= text_field_tag "username", nil, { class: "form-control", placeholder: 'Your SendHub number'} %>
+    </div>
+    <div class="form-group">
+      <%= label_tag "APIKey" %>
+      <%= text_field_tag "number", nil, {class: "form-control", placeholder: 'Your SendHub APIKey'} %>    
+    </div>
+    <%= submit_tag 'Submit', class: 'btn btn-primary' %>
+  </form>
+  <% end %>
+</div>

@@ -39,3 +39,4 @@ gem 'debugger', group: [:development, :test]
 
 gem 'backbone-on-rails'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'sqlite3'

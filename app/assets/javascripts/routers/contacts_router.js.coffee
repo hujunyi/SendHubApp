@@ -1,10 +1,9 @@
 class SendHub.Routers.Contacts extends Backbone.Router
   routes: 
-    '': 'index'
+    'home': 'index'
 
   initialize: ->
     @collection = new SendHub.Collections.Contacts()
-    @collection.fetch({reset: true})
 
   index: ->
     view = new SendHub.Views.ContactsIndex(collection:@collection)

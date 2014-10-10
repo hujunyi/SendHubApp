@@ -17,3 +17,7 @@
 .col-xs-6{
   padding-bottom: 20px;
 }
+.list-group{
+  min-height:300px;
+}
+

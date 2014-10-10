@@ -5,11 +5,15 @@ class MainController < ApplicationController
 
 
   def home
+    credentials(params[:username],params[:number])
+  end
+
+  def login
   end
   def index
     req = Net::HTTP::Get.new(@uri.request_uri)
     response = @http.request(req)
-    render json: response.body
+    render json: response.body, status: response.code
   end
 
   def create
@@ -18,7 +22,7 @@ class MainController < ApplicationController
     req.body = data
     req["Content-Type"] = "application/json"
     response = @http.request(req)
-    render json: response.body
+    render json: response.body, status: response.code
   end
 
   def message
@@ -27,7 +31,7 @@ class MainController < ApplicationController
     req.body = data
     req["Content-Type"] = "application/json"
     response = @http.request(req)
-    render json: response.body
+    render json: response.body, status: response.code
   end
 
   def update
@@ -36,7 +40,7 @@ class MainController < ApplicationController
     req.body = data
     req["Content-Type"] = "application/json"
     response = @http.request(req)
-    render json: response.body
+    render json: response.body, status: response.code
   end
 
   private
