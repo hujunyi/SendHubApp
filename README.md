@@ -12,14 +12,19 @@ Environments
 
 How to use
 -
-Before run this app, you have to set your USERNAME and APIKey in the app/controllers/application_controller.rb(Due to limited time. But I will fix this later).
+Before run this app, you have to set your USERNAME and APIKey in the app/controllers/application_controller.rb
+```
+  def credentials(number=USERNAME,api_key=APIKey)
+    "/?username=#{number}&api_key=#{api_key}"
+  end
+```
 ```
 bundle 
 rails s
 ```
 go to http://localhost:3000 in your browser
 
-[Online Link](http://sendhubapp-joeyhu.herokuapp.com/)
+[Online Link](http://sendapp.joeyhu.info/)(There is some issues with the live one on heroku, I will fix it tomorrow morning.)
 
 
 
