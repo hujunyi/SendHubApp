@@ -21,8 +21,16 @@ class MainController < ApplicationController
     render json: response.body
   end
 
-  
   def message
+    req = Net::HTTP::Post.new("/v1/messages/?#{@uri.query}")
+    data = {"contacts"=>params[:contacts],"text"=>params[:text]}.to_json
+    debugger 
+    req.body = data
+    req["Content-Type"] = "application/json"
+    http = Net::HTTP.new(@uri.host,@uri.port)
+    http.use_ssl = true
+    response = http.request(req)
+    render json: response.body
   end
 
   def update

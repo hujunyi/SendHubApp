@@ -3,7 +3,8 @@ class SendHub.Views.ContactsIndex extends Backbone.View
   template: JST['contacts/index']
 
   events: 
-    submit: 'addContact'
+    'click #contact-submit': 'addContact'
+    'click #message-send':'sendMsg'
 
   initialize: ->
     @collection.on('reset',@render)
@@ -18,10 +19,17 @@ class SendHub.Views.ContactsIndex extends Backbone.View
     console.log contact
     view = new SendHub.Views.Contact(model: contact)
     el = view.render().el
-    $(el).on('click',(e)=>
+    $(el).on('click','button',(e)=>
       e.preventDefault()
+      @resetTag()
       @$('#contact-name').val(contact.get('name'))
       @$('#contact-number').val(contact.get('number').substr(2,11))
+      @model = contact
+    )
+    $(el).on('click','a',(e)=>
+      e.preventDefault()
+      @resetTag()
+      @$('#receiver').text(contact.get('name'))
       @model = contact
     )
     @$('#contacts-list').append(el)
@@ -41,4 +49,25 @@ class SendHub.Views.ContactsIndex extends Backbone.View
     else
       @model.set({name: name,number: number})
       @model.save()
+  resetTag: =>
+    @$('#contact-name').val("")
+    @$('#contact-number').val("")
+    @$('#receiver').text("")
+    @model = null
+
+  sendMsg: (e)=>
+    e.preventDefault()
+    msg = @$('#msg-content').val()
+    data = {"contacts": [@model.get('id_str')],"text": msg}
+    console.log data
+    $.ajax({
+      type: "POST"
+      url: "/messages"
+      data: JSON.stringify(data)
+      dataType: 'json'
+      #postData: JSON.stringify(data)
+      contentType: 'application/json'
+      success: (response)->
+        console.log response
+    })
 

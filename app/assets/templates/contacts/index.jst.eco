@@ -13,9 +13,19 @@
       <label>Number</label>
       <input type="text" class="form-control" id="contact-number">
     </div>
-    <button type="submit" class="btn btn-primary">Add Contact</button>
+    <button type="submit" class="btn btn-primary" id="contact-submit">Add Contact</button>
   </form>
 </div>
 <div class='col-xs-4'>
+  <form role="form">
+    <div class="form-group">
+      <label>Send Message</label>
+      <textarea class="form-control" rows="3" id="msg-content"></textarea>
+    </div>
+    <label id="receiver">
+      Click a contact on the left
+    </label>
+    <button type="submit" class="btn btn-primary pull-right" id="message-send">Submit</button>
+  </form>
 </div>
 
