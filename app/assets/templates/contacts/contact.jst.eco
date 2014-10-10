@@ -1,0 +1,1 @@
+<div href="#" class="list-group-item"><a href="#"><%= @model.get('name') %></a><button class='btn btn-primary badge'>Edit</button></div>
