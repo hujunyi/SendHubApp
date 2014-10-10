@@ -1,4 +1,5 @@
-<div class='col-xs-4 col-md-offset-2'>
+<div class="alert" role="alert" id="alert-msg"></div>
+<div class='col-xs-6'>
   <div class="panel panel-default">
     <div class="panel-heading">Contacts</div>
     <div class="panel-body list-group" id="contacts-list">
@@ -6,26 +7,28 @@
   </div>
   <form role="form">
     <div class="form-group">
-      <label>Name</label>
+      <label>Name: <span id="name"></span></label>
       <input type="text" class="form-control" id="contact-name">
     </div>
     <div class="form-group">
       <label>Number</label>
       <input type="text" class="form-control" id="contact-number">
     </div>
-    <button type="submit" class="btn btn-primary" id="contact-submit">Add Contact</button>
+    <button type="submit" class="btn btn-primary" id="contact-add" disabled>Add Contact</button>
+    <button type="submit" class="btn btn-success" id="contact-update">Update Contact</button>
+    <button type="submit" class="btn btn-default" id="back">Back</button>
   </form>
 </div>
-<div class='col-xs-4'>
+<div class='col-xs-6'>
   <form role="form">
     <div class="form-group">
       <label>Send Message</label>
       <textarea class="form-control" rows="3" id="msg-content"></textarea>
     </div>
-    <label id="receiver">
+    <label id="receiver" class="text-info">
       Click a contact on the left
     </label>
-    <button type="submit" class="btn btn-primary pull-right" id="message-send">Submit</button>
+    <button type="submit" class="btn btn-info pull-right" disabled id="message-send">Submit</button>
   </form>
 </div>
 
