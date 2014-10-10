@@ -17,7 +17,7 @@ Before run this app, you have to set your USERNAME and APIKey in the app/control
 bundle 
 rails s
 ```
-go to localhost:3000 in your browser
+go to http://localhost:3000 in your browser
 
 
 
