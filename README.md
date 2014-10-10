@@ -7,7 +7,7 @@ I used backbone.js as front-end framework(written in coffeescript) and Rails as 
 
 Environments
 -
-* ruby 2.1
+* Ruby 2.1
 * Rails 4.1.2
 
 How to use
