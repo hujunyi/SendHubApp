@@ -19,6 +19,7 @@ rails s
 ```
 go to [http://localhost:3000](http://localhost:3000) in your browser.
 
+I host this app in my own VPS. To access it, click:
 [Online Link](http://sendapp.joeyhu.info/)
 
 
