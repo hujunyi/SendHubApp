@@ -12,7 +12,7 @@ Environments
 
 How to use
 -
-Before use this app, you have to go to [SendHub](https://www.sendhub.com) to sign up an account and get your APIKey.
+Before using this app, you have to go to [SendHub](https://www.sendhub.com) to sign up an account and get your APIKey.
 ```
 bundle 
 rails s
