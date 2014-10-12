@@ -7,7 +7,4 @@ class ApplicationController < ActionController::Base
   def base_url
     "https://api.sendhub.com/v1/"
   end
-  def credentials
-    "/?username=#{session[:username]}&api_key=#{session[:apikey]}"
-  end
 end

@@ -34,7 +34,7 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-gem 'debugger', group: :production
+gem 'debugger', group: :development
 
 gem 'backbone-on-rails'
 gem 'rack-cors', :require => 'rack/cors'

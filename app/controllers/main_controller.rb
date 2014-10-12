@@ -4,12 +4,13 @@ class MainController < ApplicationController
 
 
   def home
-    session[:username] = params[:username]
-    session[:apikey] = params[:apikey]
+    @@username = params[:username]
+    @@apikey = params[:apikey]
   end
 
   def login
   end
+
   def index
     req = Net::HTTP::Get.new(@uri.request_uri)
     response = @http.request(req)
@@ -45,13 +46,13 @@ class MainController < ApplicationController
 
   private
   def contacts_url
-    @uri = URI.parse("#{base_url}contacts#{credentials}")
+    @uri = URI.parse("#{base_url}contacts/?username=#{@@username}&api_key=#{@@apikey}")
     @http = Net::HTTP.new(@uri.host,@uri.port)
     @http.use_ssl = true
   end
 
   def messages_url
-    @uri = URI.parse("#{base_url}messages#{credentials}")
+    @uri = URI.parse("#{base_url}messages/?username=#{@@username}&api_key=#{@@apikey}")
     @http = Net::HTTP.new(@uri.host,@uri.port)
     @http.use_ssl = true
   end
