@@ -1,11 +1,11 @@
 class MainController < ApplicationController
-  skip_before_filter  :verify_authenticity_token
   before_action :contacts_url, only: [:index,:create,:update]
   before_action :messages_url, only: :message
 
 
   def home
-    credentials(params[:username],params[:number])
+    session[:username] = params[:username]
+    session[:apikey] = params[:apikey]
   end
 
   def login
